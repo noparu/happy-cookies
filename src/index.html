@@ -7,20 +7,22 @@
     <!-- <link href="./styles/output.css" rel="stylesheet"> -->
     <link href="./styles/build.css" rel="stylesheet">
     <title>HappyCookies</title>
-    <script src="https://kit.fontawesome.com/ac769410a8.js" crossorigin="anonymous"></script>
 </head>
 <body class="mt-16">
     <!-- Header -->
     <header class="fixed left-0 top-0 z-10 w-full bg-white">
     <div class="w-full px-8 h-16 border-b-2 border-black flex justify-between items-center relative">
         <!-- Navbar -->
-        <nav class="hidden md:block">
-            <ul class="flex gap-5 font-medium">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
+        <nav class="absolute left-0 top-0 bg-white md:relative -ml-[300px] md:ml-0 md:block smooth" id="navbar">
+            <ul class="flex gap-5 font-medium w-[300px] h-dvh flex-col p-4 md:p-0 mt-[62px] md:mt-0 border-t-2 border-r-2 md:border-r-0 border-black md:border-t-0 md:flex-row md:h-fit md:w-fit">
+                <li><a href="#" class="w-full md:w-fit block">Beranda</a></li>
+                <li><a href="#" class="w-full md:w-fit block">Produk</a></li>
+                <li><a href="#" class="w-full md:w-fit block">Tentang Kami</a></li>
             </ul>
         </nav>
+
+        <!-- Blank Screen -->
+        <div class="md:hidden absolute left-0 top-0 w-0 h-dvh bg-black/50 -z-10 mt-[62px] cursor-pointer smooth" id="blank-screen"></div>
         
         <!-- Logo -->
         <div class="absolute left-0 right-0 top-0 bottom-0 w-full h-full flex items-center justify-center">
@@ -36,7 +38,7 @@
         </div>
 
         <!-- Hamburger Menu -->
-        <div class="w-5 h-[13px] flex flex-col justify-between md:hidden">
+        <div id="hamburger-menu" class="z-10 w-5 h-[13px] flex flex-col justify-between md:hidden cursor-pointer">
             <span class="h-[2px] w-full bg-black"></span>
             <span class="h-[2px] w-full bg-black"></span>
             <span class="h-[2px] w-full bg-black"></span>
@@ -50,9 +52,9 @@
             <!-- <img src="./../assets/images/pattern.png" class="object-cover w-full"> -->
             <img src="https://raw.githubusercontent.com/noparu/happy-cookies/master/assets/images/pattern.png" class="object-cover w-full">
             <div class="absolute left-0 top-0 w-full h-full flex gap-4 flex-col justify-center items-start px-10">
-                <h1 class="font-semibold text-3xl">Indulge in Pure Bliss</h1>
-                <h2 class="font-medium">Experience the joy of every bite. Our cookies are baked with love and the finest ingredients.</h2>
-                <button class="bg-white border-2 border-black px-3 py-1 rounded-lg font-medium">Order Now</button>
+                <h1 class="font-semibold text-3xl">Rasakan Kebahagiaan Murni</h1>
+                <h2 class="font-medium">Nikmati kebahagiaan dalam setiap gigitan. Cookies kami dipanggang dengan penuh cinta dan bahan-bahan terbaik.</h2>
+                <button class="bg-white border-2 border-black px-3 py-1 rounded-lg font-medium">Pesan Sekarang</button>
             </div>
         </div>
         
@@ -65,69 +67,72 @@
     <div class="w-full grid grid-cols-1 gap-y-6 md:gap-y-0 md:grid-cols-3 border-b-2 border-black py-6">
         <div class="flex items-center gap-2 mx-auto">
             <i class="fa-solid fa-circle-check fa-lg"></i>
-            <span class="font-medium text-lg">Premium Ingredients</span>
+            <span class="font-medium text-lg">Bahan Berkualitas Tinggi</span>
         </div>
         <div class="flex items-center gap-2 mx-auto">
             <i class="fa-solid fa-circle-check fa-lg"></i>
-            <span class="font-medium text-lg">Variety of Flavors</span>
+            <span class="font-medium text-lg">Beragam Rasa</span>
         </div>
         <div class="flex items-center gap-2 mx-auto">
             <i class="fa-solid fa-circle-check fa-lg"></i>
-            <span class="font-medium text-lg">Freshly Baked Goodness</span>
+            <span class="font-medium text-lg">Kelezatan Baru Dipanggang</span>
         </div>
     </div>
 
     <!-- Enjoy Our Product -->
     <div class="w-full mt-20 px-8">
         <div class="">
-            <h1 class="text-2xl font-semibold text-center">Enjoy Our HappyCookies!</h1>
+            <h1 class="text-2xl font-semibold text-center">Nikmati HappyCookies Kami!</h1>
         </div>
 
         <div class="w-full flex flex-wrap justify-center items-center gap-20 pt-10">
+            <!-- card -->
             <div class="">
                 <div class="w-[300px] h-[400px] border-2 border-black">
                     <!-- <img src="/assets/images/pattern.png" class="w-full h-full object-cover"> -->
                     <img src="https://raw.githubusercontent.com/noparu/happy-cookies/master/assets/images/pattern.png" class="w-full h-full object-cover">
                 </div>
-                <div class=" flex justify-between w-full items-end py-3">
-                    <div class="">
+                <div class="flex justify-between items-end py-3 gap-3 w-[300px]">
+                    <div class="w-full shrink">
                         <h1 class="text-xl font-semibold">Classic Cookies</h1>
                         <span class="text-lg">Rp. 45.000</span>
                     </div>
                     <div class="">
-                        <button class="bg-white border-2 border-black px-3 py-1 rounded-lg font-medium">Add to cart</button>
+                        <button class="bg-white text-right border-2 w-full border-black px-3 py-1 rounded-lg font-medium shrink-0 whitespace-nowrap">Lihat Detail</button>
                     </div>
                 </div>
             </div>
 
+            <!-- card -->
             <div class="">
                 <div class="w-[300px] h-[400px] border-2 border-black">
                     <!-- <img src="/assets/images/pattern.png" class="w-full h-full object-cover"> -->
                     <img src="https://raw.githubusercontent.com/noparu/happy-cookies/master/assets/images/pattern.png" class="w-full h-full object-cover">
                 </div>
-                <div class=" flex justify-between w-full items-end py-3">
-                    <div class="">
+                <div class="flex justify-between items-end py-3 gap-3 w-[300px]">
+                    <div class="w-full shrink">
                         <h1 class="text-xl font-semibold">Classic Cookies</h1>
                         <span class="text-lg">Rp. 45.000</span>
                     </div>
                     <div class="">
-                        <button class="bg-white border-2 border-black px-3 py-1 rounded-lg font-medium">Add to cart</button>
+                        <button class="bg-white text-right border-2 w-full border-black px-3 py-1 rounded-lg font-medium shrink-0 whitespace-nowrap">Lihat Detail</button>
                     </div>
                 </div>
             </div>
 
+            <!-- card -->
             <div class="">
                 <div class="w-[300px] h-[400px] border-2 border-black">
                     <!-- <img src="/assets/images/pattern.png" class="w-full h-full object-cover"> -->
                     <img src="https://raw.githubusercontent.com/noparu/happy-cookies/master/assets/images/pattern.png" class="w-full h-full object-cover">
                 </div>
-                <div class=" flex justify-between w-full items-end py-3">
-                    <div class="">
+                <div class="flex justify-between items-end py-3 gap-3 w-[300px]">
+                    <div class="w-full shrink">
                         <h1 class="text-xl font-semibold">Classic Cookies</h1>
                         <span class="text-lg">Rp. 45.000</span>
                     </div>
                     <div class="">
-                        <button class="bg-white border-2 border-black px-3 py-1 rounded-lg font-medium">Add to cart</button>
+                        <button class="bg-white text-right border-2 w-full border-black px-3 py-1 rounded-lg font-medium shrink-0 whitespace-nowrap">Lihat Detail</button>
                     </div>
                 </div>
             </div>
@@ -150,45 +155,38 @@
 
             <div class="w-full md:w-1/2 grid grid-cols-3">
                 <div class="flex flex-col gap-2">
-                    <h1 class="text-sm font-medium text-black/70">Lorem</h1>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
+                    <h1 class="text-sm font-medium text-black/70">Tentang Kami</h1>
+                    <span class="font-medium underline">Visi dan Misi</span>
+                    <span class="font-medium underline">Sejarah Kami</span>
+                    <span class="font-medium underline">Tim Kami</span>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h1 class="text-sm font-medium text-black/70">Lorem</h1>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
+                    <h1 class="text-sm font-medium text-black/70">Produk Kami</h1>
+                    <span class="font-medium underline">Varian Cookies</span>
+                    <span class="font-medium underline">Bahan-bahan Berkualitas</span>
+                    <span class="font-medium underline">Pesan Custom</span>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h1 class="text-sm font-medium text-black/70">Lorem</h1>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
-                    <span class="font-medium">Ipsum</span>
+                    <h1 class="text-sm font-medium text-black/70">Bantuan dan Dukungan</h1>
+                    <span class="font-medium underline">Kontak Kami</span>
+                    <span class="font-medium underline">FAQ</span>
+                    <span class="font-medium underline">Pengiriman dan Pengembalian</span>
                 </div>
             </div>
         </div>
 
         <div class="flex flex-col md:flex-row gap-y-10 md:gap-y-0 justify-between items-end">
             <div class="flex flex-col">
-                <span class="font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rerum ipsum veritatis?</span>
-                <span class="font-medium text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit qui, labore architecto obcaecati omnis amet.</span>
+                <span class="font-medium">Happy Cookies - Kue Bahagia untuk Semua</span>
+                <span class="text-sm">Menciptakan kebahagiaan melalui setiap gigitan cookies yang lezat dan berkualitas.</span>
             </div>
 
             <div class="">
-                <span class="font-medium">Lorem, ipsum dolor.</span>
+                <span class="text-sm"> © 2024 Happy Cookies. All rights reserved.</span>
             </div>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/ac769410a8.js" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
